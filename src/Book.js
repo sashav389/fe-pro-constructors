@@ -21,6 +21,7 @@ export function Book(title, year, publicationBy, authors) {
 
   Object.defineProperty(this, 'suggestedBooks', {
     get() {
+
       let result = [];
       for( let author in authors){
         result = result.concat(author.books.title);
