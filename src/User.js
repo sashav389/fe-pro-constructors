@@ -18,6 +18,14 @@ export function User(name, date) {
   let myBooks = [];
 
 
+  /**
+   *
+   * @param {User}thisObj
+   * @param {User}anotherObj
+   * @param {Array}arrThis
+   * @param {Array}arrAnother
+   */
+
   function addToArr(thisObj, anotherObj, arrThis, arrAnother){
     if(arrThis.includes(anotherObj)){
       arrAnother.filter(elem => elem !== thisObj);
@@ -75,3 +83,6 @@ export function User(name, date) {
   });
 
 }
+// git add .
+//   git init -m "try"
+// git push
