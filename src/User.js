@@ -18,6 +18,9 @@ export function User(name, date) {
   let myBooks = [];
 
 
+
+
+
   /**
    *
    * @param {User}thisObj
@@ -25,9 +28,16 @@ export function User(name, date) {
    * @param {Array}arrThis
    * @param {Array}arrAnother
    */
-
   function addToArr(thisObj, anotherObj, arrThis, arrAnother){
-    if(arrThis.includes(anotherObj)){
+    let isInOther = false;
+    for(let i = 0; i < arrThis.length; i++){
+      if(arrThis[i] === anotherObj){
+        isInOther = true;
+        break;
+      }
+    }
+
+    if(isInOther){
       arrAnother.filter(elem => elem !== thisObj);
       arrThis.filter(elem => this !== anotherObj);
     }
