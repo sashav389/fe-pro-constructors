@@ -37,31 +37,30 @@ export function User(name, date) {
     }
   }
 
-
   /**
    * @param {User} user
    */
-  function addToFriends(user){
+  this.addToFriends = function (user) {
     addToArr(this, user, this.friends, user.friends);
   }
 
   /**
    * @param {Book} book
    */
-  function likeBook(book){
+   this.likeBook = function(book){
     addToArr(this, book, this.likes, book.likedUsers);
   }
 
   /**
    * @param {User} user
    */
-  function removeFriend(user){
+   this.removeFriend = function(user){
     addToArr(this, user, this.friends, user.friends);
   }
   /**
    * @param {Book} book
    */
-  function unlikeBook(book){
+   this.unlikeBook = function (book){
     addToArr(this, book, this.likes, book.likedUsers);
   }
 
@@ -84,5 +83,5 @@ export function User(name, date) {
 
 }
 // git add .
-//   git init -m "try"
+//   git commit -m "try"
 // git push
