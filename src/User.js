@@ -27,6 +27,7 @@ export function User(name, date) {
    */
   function addToArr(thisObj, anotherObj, arrThis, arrAnother){
     let isInOther = false;
+    if(arrThis === undefined) arrThis = [];
     for(let i = 0; i < arrThis.length ; i++){
       if(arrThis[i] === anotherObj){
         isInOther = true;
