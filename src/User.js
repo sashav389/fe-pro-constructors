@@ -23,7 +23,7 @@ export function User(name, date) {
    * @param {User}thisObj
    * @param {User}anotherObj
    * @param arrThis
-   * @param {Array}arrAnother
+   * @param {[]}arrAnother
    */
   function addToArr(thisObj, anotherObj, arrThis, arrAnother){
     let isInOther = false;
@@ -80,12 +80,15 @@ export function User(name, date) {
   });
   Object.defineProperty(this, 'likedBooks', {
     get() {
+      if(this.likes === undefined) this.likes = [];
       return this.likes.map( elem => elem.title).split(", ");
 
     },
   });
   Object.defineProperty(this, 'publishedBooks', {
     get() {
+      if(this.myBooks === undefined) this.myBooks = [];
+
       return this.myBooks.map( elem => elem.title).split(", ");
     },
   });
