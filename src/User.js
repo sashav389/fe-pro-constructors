@@ -39,6 +39,7 @@ export function User(name, date) {
       arrAnother.filter(elem => elem !== thisObj);
       arrThis.filter(elem => this !== anotherObj);
     }
+    if(arrAnother === undefined) arrAnother = [];
     else{
       arrAnother.push(thisObj);
       arrThis.push(anotherObj);
