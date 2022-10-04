@@ -22,7 +22,7 @@ export function User(name, date) {
    *
    * @param {User}thisObj
    * @param {User}anotherObj
-   * @param arrThis
+   * @param {[]}arrThis
    * @param {[]}arrAnother
    */
 
@@ -48,8 +48,9 @@ export function User(name, date) {
       //arrThis.filter(elem => this !== anotherObj);
     }
     else{
-      arrAnother.push(thisObj);
       arrThis.push(anotherObj);
+      arrAnother.push(thisObj);
+
     }
   }
 
