@@ -22,8 +22,8 @@ export function User(name, date) {
    *
    * @param {User}thisObj
    * @param {User}anotherObj
-   * @param {[]}arrThis
-   * @param {[]}arrAnother
+   * @param {[]} arrAnother
+   * @param {[]} arrThis
    */
 
   function addToArr(thisObj, anotherObj, arrAnother, arrThis){

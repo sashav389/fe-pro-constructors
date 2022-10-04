@@ -11,5 +11,5 @@ import { Book } from './Book.js';
 export function Author(name, dateOfBirth) {
   this.name = name;
   this.dateOfBirth = dateOfBirth;
-  let books = [];
+  this.books = [];
 }
