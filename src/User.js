@@ -48,6 +48,8 @@ export function User(name, date) {
   }
 
 
+
+
   /**
    * @param {User} user
    */
@@ -89,6 +91,11 @@ export function User(name, date) {
   Object.defineProperty(this, 'publishedBooks', {
     get() {
       return this.myBooks.map( elem => elem.title).join(", ");
+    },
+  });
+  Object.defineProperty(this, 'getName', {
+    get() {
+      return this.name;
     },
   });
 

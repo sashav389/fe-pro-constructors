@@ -45,11 +45,11 @@ export function Book(title, year, publicationBy, authors) {
       }
       let arrPublicators = [];
       for(let book in arrBooks){
-        arrPublicators = arrPublicators.concat(book.publicationBy.name);
+        arrPublicators = arrPublicators.concat(book.publicationBy.getName());
       }
       let i = 0;
       while(arrPublicators[i] !== undefined) {
-        if(arrPublicators[i] === this.publicationBy.name){
+        if(arrPublicators[i] === this.publicationBy.getName()){
           arrPublicators.splice(i, 1);
           continue;
         }
