@@ -18,13 +18,6 @@ export function User(name, date) {
   this.myBooks = [];
 
 
-  /**
-   *
-   * @param {User} thisObj
-   * @param {User }anotherObj
-   * @param {[]} arrThis
-   * @param {[]}  arrAnother
-   */
 
   function addToArr(thisObj, anotherObj, arrThis,  arrAnother){
     if(arrThis.includes(anotherObj)){
