@@ -26,13 +26,13 @@ export function User(name, date) {
    * @param {[]}arrAnother
    */
 
-  function addToArr(thisObj, anotherObj, arrThis, arrAnother){
+  function addToArr(thisObj, anotherObj, arrAnother, arrThis){
     if(arrThis.includes(anotherObj)){
       let i = 0;
       while(arrThis[i] !== undefined) {
         if(arrThis[i] === anotherObj){
           arrThis.splice(i, 1);
-          continue;
+          break;
         }
         i++;
       }
@@ -40,7 +40,7 @@ export function User(name, date) {
       while(arrAnother[i] !== undefined) {
         if(arrAnother[i] === thisObj){
           arrAnother.splice(i, 1);
-          continue;
+          break;
         }
         i++;
       }
@@ -50,7 +50,7 @@ export function User(name, date) {
     else{
       arrThis.push(anotherObj);
 
-      //arrAnother.push(thisObj);
+      arrAnother.push(thisObj);
     }
   }
 
