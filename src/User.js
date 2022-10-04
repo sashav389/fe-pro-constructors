@@ -20,13 +20,13 @@ export function User(name, date) {
 
   /**
    *
-   * @param {User}thisObj
-   * @param {User}anotherObj
-   * @param {[]} arrAnother
+   * @param {User} thisObj
+   * @param {User }anotherObj
    * @param {[]} arrThis
+   * @param {[]}  arrAnother
    */
 
-  function addToArr(thisObj, anotherObj, arrAnother, arrThis){
+  function addToArr(thisObj, anotherObj, arrThis,  arrAnother){
     if(arrThis.includes(anotherObj)){
       let i = 0;
       while(arrThis[i] !== undefined) {
