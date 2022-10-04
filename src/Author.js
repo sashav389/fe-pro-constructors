@@ -12,4 +12,10 @@ export function Author(name, dateOfBirth) {
   this.name = name;
   this.dateOfBirth = dateOfBirth;
   this.books = [];
+  Object.defineProperty(this, 'getBooks', {
+    get() {
+      return this.books;
+
+    },
+  });
 }

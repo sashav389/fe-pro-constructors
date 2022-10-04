@@ -43,7 +43,7 @@ export function User(name, date) {
     else{
       const temp = arrThis.push(anotherObj);
 
-      arrAnother.push(thisObj);
+      const gg = arrAnother.push(thisObj);
     }
   }
 

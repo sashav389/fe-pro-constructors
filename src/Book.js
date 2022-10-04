@@ -24,7 +24,7 @@ export function Book(title, year, publicationBy, authors) {
 
       let result = [];
       for( let author in authors){
-        result = result.concat(author.books.map(book => book.title));
+        result = result.concat(author.getBooks().map(book => book.title));
       }
       let i = 0;
       while(result[i] !== undefined) {
