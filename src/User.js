@@ -13,9 +13,9 @@ import { Book } from './Book.js';
 export function User(name, date) {
   this.name = name;
   this.date = date;
-  let friends = [];
-  let likes = [];
-  let myBooks = [];
+  this.friends = [];
+  this.likes = [];
+  this.myBooks = [];
 
 
   /**
