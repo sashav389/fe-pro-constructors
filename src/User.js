@@ -25,71 +25,76 @@ export function User(name, date) {
    * @param arrThis
    * @param {[]}arrAnother
    */
-  function addToArr(thisObj, anotherObj, arrThis, arrAnother){
-    let isInOther = false;
-    if(arrThis === undefined) arrThis = [];
-    for(let i = 0; i < arrThis.length ; i++){
-      if(arrThis[i] === anotherObj){
-        isInOther = true;
-        break;
-      }
-    }
 
-    if(isInOther){
-      arrAnother.filter(elem => elem !== thisObj);
-      arrThis.filter(elem => this !== anotherObj);
+  function addToArr(thisObj, anotherObj, arrThis, arrAnother){
+    if(arrThis.includes(anotherObj)){
+      let i = 0;
+      while(arrThis[i] !== undefined) {
+        if(arrThis[i] === anotherObj){
+          arrThis.splice(i, 1);
+          continue;
+        }
+        i++;
+      }
+      i = 0;
+      while(arrAnother[i] !== undefined) {
+        if(arrAnother[i] === thisObj){
+          arrAnother.splice(i, 1);
+          continue;
+        }
+        i++;
+      }
+      //arrAnother.filter(elem => elem !== thisObj);
+      //arrThis.filter(elem => this !== anotherObj);
     }
-    if(arrAnother === undefined) arrAnother = [];
     else{
       arrAnother.push(thisObj);
       arrThis.push(anotherObj);
     }
   }
 
+
   /**
    * @param {User} user
    */
-  this.addToFriends = function (user) {
+  this.addToFriends = function (user){
     addToArr(this, user, this.friends, user.friends);
   }
 
   /**
    * @param {Book} book
    */
-   this.likeBook = function(book){
+  this.likeBook = function (book){
     addToArr(this, book, this.likes, book.likedUsers);
   }
 
   /**
    * @param {User} user
    */
-   this.removeFriend = function(user){
+  this.removeFriend = function (user){
     addToArr(this, user, this.friends, user.friends);
   }
   /**
    * @param {Book} book
    */
-   this.unlikeBook = function (book){
+  function unlikeBook(book){
     addToArr(this, book, this.likes, book.likedUsers);
   }
 
   Object.defineProperty(this, 'friendsNames', {
     get() {
-      return this.friends.map( elem => elem.name).split(", ");
+      return this.friends.map( elem => elem.name).join(", ");
     },
   });
   Object.defineProperty(this, 'likedBooks', {
     get() {
-      if(this.likes === undefined) this.likes = [];
-      return this.likes.map( elem => elem.title).split(", ");
+      return this.likes.map( elem => elem.title).join(", ");
 
     },
   });
   Object.defineProperty(this, 'publishedBooks', {
     get() {
-      if(this.myBooks === undefined) this.myBooks = [];
-
-      return this.myBooks.map( elem => elem.title).split(", ");
+      return this.myBooks.map( elem => elem.title).join(", ");
     },
   });
 
