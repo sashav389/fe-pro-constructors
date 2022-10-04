@@ -24,7 +24,7 @@ export function Book(title, year, publicationBy, authors) {
 
       let result = [];
       for( let author in authors){
-        result = result.concat(author.getBooks().map(book => book.title));
+        result = result.concat(author.getBooks.map(book => book.title));
       }
       let i = 0;
       while(result[i] !== undefined) {
@@ -45,11 +45,11 @@ export function Book(title, year, publicationBy, authors) {
       }
       let arrPublicators = [];
       for(let book in arrBooks){
-        arrPublicators = arrPublicators.concat(book.publicationBy.getName());
+        arrPublicators = arrPublicators.concat(book.publicationBy.getName);
       }
       let i = 0;
       while(arrPublicators[i] !== undefined) {
-        if(arrPublicators[i] === this.publicationBy.getName()){
+        if(arrPublicators[i] === this.publicationBy.getName){
           arrPublicators.splice(i, 1);
           continue;
         }
