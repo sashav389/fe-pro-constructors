@@ -49,8 +49,8 @@ export function User(name, date) {
     }
     else{
       arrThis.push(anotherObj);
-      
-      arrAnother.push(thisObj);
+
+      //arrAnother.push(thisObj);
     }
   }
 
