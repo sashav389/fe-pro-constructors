@@ -41,7 +41,7 @@ export function User(name, date) {
       //arrThis.filter(elem => this !== anotherObj);
     }
     else{
-      arrThis.push(anotherObj);
+      const temp = arrThis.push(anotherObj);
 
       arrAnother.push(thisObj);
     }
