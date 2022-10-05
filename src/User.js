@@ -73,7 +73,7 @@ export function User(name, date) {
   /**
    * @param {Book} book
    */
-  function unlikeBook(book){
+  this.unlikeBook = function (book){
     addToArr(this, book, this.likes, book.likedUsers);
   }
 
