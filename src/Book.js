@@ -23,7 +23,7 @@ export function Book(title, year, publicationBy, authors) {
   Object.defineProperty(this, 'suggestedBooks', {
     get() {
 
-      let result = authors.map(author => author.map(book => book.title));
+      let result = authors.map(author => author.books.map(book => book.title));
     
       //  result.push(author.books.map(book => book.title));
       
@@ -40,7 +40,7 @@ export function Book(title, year, publicationBy, authors) {
   });
   Object.defineProperty(this, 'suggestedPublicators', {
     get() {
-      let arrBooks = authors.map(author => author.books.map(book => book.publicationBy.name));
+      let arrPublicators = authors.map(author => author.books.map(book => book.publicationBy));
       
 //       let arrPublicators = [];
 //       for(let book in arrBooks){
