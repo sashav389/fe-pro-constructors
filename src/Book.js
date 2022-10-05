@@ -23,32 +23,34 @@ export function Book(title, year, publicationBy, authors) {
   Object.defineProperty(this, 'suggestedBooks', {
     get() {
 
-      let result = authors.map(author => author.books.map(book => book.title));
-    
-      //  result.push(author.books.map(book => book.title));
-      
+      let titles = [... new Set (concatAllArrays(
+          this.authors
+              .map(author => author.books
+                  .map(title => title)
+              )
+      ))];
       let i = 0;
-      while(result[i] !== undefined) {
-        if(result[i] === this.title){
-          result.splice(i, 1);
+      while(titles[i] !== undefined) {
+        if(titles[i] === this.title){
+          titles.splice(i, 1);
           continue;
         }
         i++;
       }
-      return result.join(", ");
+      return titles.join(", ");
     },
   });
   Object.defineProperty(this, 'suggestedPublicators', {
     get() {
-      let arrPublicators = authors.map(author => author.books.map(book => book.publicationBy));
-      
-//       let arrPublicators = [];
-//       for(let book in arrBooks){
-//         arrPublicators.push(book.publicationBy.getName);
-//       }
+      let arrPublicators = [... new Set(concatAllArrays(this.authors
+          .map(author => author.books
+              .map(book => book.publicationBy.name)
+          )
+      ))];
+
       let i = 0;
       while(arrPublicators[i] !== undefined) {
-        if(arrPublicators[i] === this.publicationBy.getName){
+        if(arrPublicators[i] === this.publicationBy.name){
           arrPublicators.splice(i, 1);
           continue;
         }
@@ -58,4 +60,14 @@ export function Book(title, year, publicationBy, authors) {
     },
   });
 
+}
+/**
+ * @param {[]} arrayOfArrays
+ */
+function concatAllArrays(arrayOfArrays){
+  let result = [];
+  for(let i = 0; i < arrayOfArrays.length; i++){
+    result.concat(arrayOfArrays[i]);
+  }
+  return result;
 }
