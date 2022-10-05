@@ -46,7 +46,7 @@ export function Book(title, year, publicationBy, authors) {
       }
       let arrPublicators = [];
       for(let book in arrBooks){
-        arrPublicators.push(book.publicationBy.name);
+        arrPublicators.push(book.publicationBy.getName);
       }
       let i = 0;
       while(arrPublicators[i] !== undefined) {
