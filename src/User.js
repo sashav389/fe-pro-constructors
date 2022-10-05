@@ -79,18 +79,18 @@ export function User(name, date) {
 
   Object.defineProperty(this, 'friendsNames', {
     get() {
-      return this.friends.map( elem => elem.name).join(", ");
+      return this.friends.map( friend => friend.name).join(", ");
     },
   });
   Object.defineProperty(this, 'likedBooks', {
     get() {
-      return this.likes.map( elem => elem.title).join(", ");
+      return this.likes.map( book => book.title).join(", ");
 
     },
   });
   Object.defineProperty(this, 'publishedBooks', {
     get() {
-      return this.myBooks.map( elem => elem.title).join(", ");
+      return this.myBooks.map( book => book.title).join(", ");
     },
   });
   Object.defineProperty(this, 'getName', {
