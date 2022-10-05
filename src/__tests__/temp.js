@@ -159,3 +159,11 @@ const b3 = new Book("Porsche", 2003, u1, [a2, a4]);
 const b4 = new Book("Mits", 2003, u1, [a4, a5]);
 const b5 = new Book("Lamb", 2003, u2, [a2, a4, a1]);
 
+a1.books = [b1, b2, b5];
+a2.books = [b5, b3];
+a3.books = [ b2];
+a4.books = [b3, b2,b4, b5];
+a5.books = [b4];
+
+
+

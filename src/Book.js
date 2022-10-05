@@ -23,12 +23,12 @@ export function Book(title, year, publicationBy, authors) {
   Object.defineProperty(this, 'suggestedBooks', {
     get() {
 
-      let titles = [... new Set (concatAllArrays(
+      let titles = [... new Set (
           this.authors
               .map(author => author.books
                   .map(title => title)
-              )
-      ))];
+              ).flat()
+      )];
       let i = 0;
       while(titles[i] !== undefined) {
         if(titles[i] === this.title){
@@ -42,11 +42,11 @@ export function Book(title, year, publicationBy, authors) {
   });
   Object.defineProperty(this, 'suggestedPublicators', {
     get() {
-      let arrPublicators = [... new Set(concatAllArrays(this.authors
+      let arrPublicators = [... new Set(this.authors
           .map(author => author.books
               .map(book => book.publicationBy.name)
-          )
-      ))];
+          ).flat()
+      )];
 
       let i = 0;
       while(arrPublicators[i] !== undefined) {
@@ -68,6 +68,7 @@ function concatAllArrays(arrayOfArrays){
   let result = [];
   for(let i = 0; i < arrayOfArrays.length; i++){
     result.concat(arrayOfArrays[i]);
+    console.log(result);
   }
   return result;
 }
