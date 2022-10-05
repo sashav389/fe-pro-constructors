@@ -23,10 +23,10 @@ export function Book(title, year, publicationBy, authors) {
   Object.defineProperty(this, 'suggestedBooks', {
     get() {
 
-      let result = [];
-      for( let author in authors){
-        result.push(author.books.map(book => book.title));
-      }
+      let result = authors.map(author => author.map(book => book.title));
+    
+      //  result.push(author.books.map(book => book.title));
+      
       let i = 0;
       while(result[i] !== undefined) {
         if(result[i] === this.title){
@@ -40,14 +40,12 @@ export function Book(title, year, publicationBy, authors) {
   });
   Object.defineProperty(this, 'suggestedPublicators', {
     get() {
-      let arrBooks = [];
-      for(let author in authors){
-        arrBooks.push(author.books);
-      }
-      let arrPublicators = [];
-      for(let book in arrBooks){
-        arrPublicators.push(book.publicationBy.getName);
-      }
+      let arrBooks = authors.map(author => author.books.map(book => book.publicationBy.name));
+      
+//       let arrPublicators = [];
+//       for(let book in arrBooks){
+//         arrPublicators.push(book.publicationBy.getName);
+//       }
       let i = 0;
       while(arrPublicators[i] !== undefined) {
         if(arrPublicators[i] === this.publicationBy.getName){
