@@ -18,6 +18,7 @@ export function Book(title, year, publicationBy, authors) {
   this.year = year;
   this.publicationBy = publicationBy;
   this.authors = authors;
+  this.likedUsers = [];
 
   Object.defineProperty(this, 'suggestedBooks', {
     get() {
