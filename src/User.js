@@ -21,31 +21,30 @@ export function User(name, date) {
 
   function addToArr(thisObj, anotherObj, arrThis,  arrAnother){
     if(arrThis.includes(anotherObj)){
-      let i = 0;
-      while(arrThis[i] !== undefined) {
-        if(arrThis[i] === anotherObj){
-          arrThis.splice(i, 1);
-          break;
-        }
-        i++;
-      }
-      i = 0;
-      while(arrAnother[i] !== undefined) {
-        if(arrAnother[i] === thisObj){
-          arrAnother.splice(i, 1);
-          break;
-        }
-        i++;
-      }
-      //arrAnother.filter(elem => elem !== thisObj);
-      //arrThis.filter(elem => this !== anotherObj);
+      // let i = 0;
+      // while(arrThis[i] !== undefined) {
+      //   if(arrThis[i] === anotherObj){
+      //     arrThis.splice(i, 1);
+      //     break;
+      //   }
+      //   i++;
+      // }
+      // i = 0;
+      // while(arrAnother[i] !== undefined) {
+      //   if(arrAnother[i] === thisObj){
+      //     arrAnother.splice(i, 1);
+      //     break;
+      //   }
+      //   i++;
+      // }
+      arrAnother.filter(elem => elem !== thisObj);
+      arrThis.filter(elem => this !== anotherObj);
     }
     else{
       arrThis.push(anotherObj);
       arrAnother.push(thisObj);
     }
   }
-
 
 
 
